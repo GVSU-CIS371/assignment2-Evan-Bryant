@@ -1,15 +1,19 @@
 <template>
-  <div class="syrup"></div>
+  <div class="syrup" :style="{ backgroundColor: color, height: height + '%' }"></div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+type Props = {
+  color: string;
+  height: number;
+};
+defineProps<Props>();
+</script>
 <style lang="scss" scoped>
 .syrup {
   transform: translateY(400%);
-  background-color: #c6c6c6;
   position: relative;
   width: 100%;
-  height: 20%;
   animation: pour-tea 2s 1s forwards;
   z-index: 2;
 }
